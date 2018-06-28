@@ -9,7 +9,8 @@
             "type": "python",
             "request": "launch",
             "stopOnEntry": false,
-            "pythonPath": "${config:python.pythonPath}",
+            // "pythonPath": "${config:python.pythonPath}", // Python2.x
+            "pythonPath": "/usr/local/bin/python3",         // Python3.x
             "module": "flask",
             "program": "${workspaceRoot}/src/app.py",
             "cwd": "${workspaceRoot}",
