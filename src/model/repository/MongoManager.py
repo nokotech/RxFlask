@@ -19,7 +19,7 @@ class MongoManager(object):
     def _preInit(self):
         print('pre init')
         self._instance = super().__new__(self)
-        connect = MongoClient('0.0.0.0', 32771)
+        connect = MongoClient('localhost', 27017)
         self._db = connect.test
         print('db name is = {}'.format(self._db.name))
     
