@@ -1,6 +1,6 @@
 # RxFlask
 
-##
+## install lib
 * `sudo pip install -r ./.config/requirements.txt`
 
 ## none .pyc
@@ -9,3 +9,11 @@
 
 ## run unit test
 `python -m unittest test.test_app`
+
+## Source
+TODO...
+
+<p align="center">
+  <br>
+  <a href=""><strong>Takenoko Tech.</strong></a>
+</p>
