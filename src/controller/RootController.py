@@ -25,3 +25,10 @@ class RootController(BaseController):
     def getTable(self):
         print('getTable')
         return UserRepository().findAll()
+
+    def remove(self, obj):
+        print('getTable')
+        user = UserEntity()
+        user.name = obj["name"]
+        user.age = obj["age"]
+        return UserRepository().remove(obj)

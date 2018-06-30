@@ -19,7 +19,7 @@ class RootView(BaseView):
     def index(self):
         print("RootView.index")
         model = Model()
-        model.table = self.controller.getTable()
+        # model.table = self.controller.getTable()
         return render_template('index.html', model=model, table=model.table)
 
     @property

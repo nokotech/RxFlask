@@ -18,4 +18,33 @@
 {%- endfor %}
 </table>
 
+<table id="table" border="1" cellspacing="0" cellpadding="4" bordercolor="#333333"></table>
+<script type="text/javascript">
+
+socket = new WebSocket("ws://localhost:5000/ws");
+socket.onmessage = render
+socket.onopen = changeState
+socket.onclose = changeState
+socket.onerror = changeState
+
+function onClick(index) {
+    console.log(`onClick ${JSON.stringify(socket)} ${index}`)
+    socket.send(index);
+}
+function render(e) {
+    console.log(e.data)
+    var json = JSON.parse(e.data);
+    var element = document.getElementById("table");
+    while (element.firstChild) element.removeChild(element.firstChild);
+    for(d of json.items) {
+        var div = document.createElement("tr");
+        div.innerHTML = `<td>${d.name}</td><td>${d.age}</td><td><button onClick="onClick('${d.name}')">del</button></td>`
+        document.getElementById("table").appendChild(div)
+    }
+}
+function changeState(e) {
+    console.log(e)
+}
+</script>
+
 {% endblock %}
