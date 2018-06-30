@@ -24,19 +24,21 @@ class UserRepository(BaseRepository):
         data = self._userCollect.find_one(obj.codable)
         data['age'] = newObj.age
         self._userCollect.save(data)
+    
+    def remove(self, obj):
+        print("remove. {}".format(obj))
+        self.typeValidate(obj, UserEntity)
+        self._userCollect.remove(obj.codable)
 
     def find(self, obj):
         print("find. {}".format(obj))
         self.typeValidate(obj, UserEntity)
         for data in self._userCollect.find(obj.codable):
             print(data)
+        return self._userCollect.find(obj.codable)
     
     def findAll(self):
         print("findAll.")
         for data in self._userCollect.find():
             print(data)
-    
-    def remove(self, obj):
-        print("remove. {}".format(obj))
-        self.typeValidate(obj, UserEntity)
-        self._userCollect.remove(obj.codable)
+        return self._userCollect.find()

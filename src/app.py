@@ -5,8 +5,12 @@ from view.RootView import RootView
 app = Flask(__name__)
 
 @app.route("/")
-def root():
-    return RootView().render
+def index():
+    return RootView().index
+
+@app.route("/regist", methods=["POST"])
+def regist():
+    return RootView().regist
 
 if __name__ == '__main__':
     app.debug = True

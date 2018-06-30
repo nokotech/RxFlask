@@ -10,13 +10,13 @@ services:
     volumes:
       - .:/src
     links:
-      - mongodb
+      - mongo
     depends_on:
-      - mongodb
+      - mongo
 
-  mongodb:
+  mongo:
     image: mongo
-    container_name: mongodb
+    container_name: mongo
     volumes:
       - ./data:/data/db
     ports:

@@ -16,8 +16,12 @@ class RootController(BaseController):
         newEntity = copy.deepcopy(entity)
         newEntity.age = "age2"
 
-        UserRepository().find(entity)
-        UserRepository().insert(entity)
+        # UserRepository().find(entity)
+        # UserRepository().insert(entity)
 
-        UserRepository().update(entity, newEntity)
-        UserRepository().remove(newEntity)
+        # UserRepository().update(entity, newEntity)
+        # UserRepository().remove(newEntity)
+    
+    def getTable(self):
+        print('getTable')
+        return UserRepository().findAll()
