@@ -1,10 +1,12 @@
 from flask import Flask
 
+from view.RootView import RootView
+
 app = Flask(__name__)
 
 @app.route("/")
-def hello():
-    return "Hello World!"
+def root():
+    return RootView().render
 
 if __name__ == '__main__':
     app.debug = True

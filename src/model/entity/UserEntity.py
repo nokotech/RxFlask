@@ -1,4 +1,4 @@
-class SampleEntity(object):
+class UserEntity(object):
     name = ""
     age = ""
 
